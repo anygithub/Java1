@@ -3,6 +3,7 @@ public class HW1{
 		initiateVariables();
 		System.out.println(calculateExpression(1,2,3,4));
 		System.out.println(compareSum(10,11));
+		checkPositiveOrNegative(0);
 	}
 	
 	static void initiateVariables(){
@@ -29,4 +30,13 @@ public class HW1{
 			return false;
 		}
 	}
+	
+	static void checkPositiveOrNegative(int a){
+		if (a>=0){
+			System.out.println("Positive");
+		} else {
+			System.out.println("Negative");
+		}
+	}
+	
 }
