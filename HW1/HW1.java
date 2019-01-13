@@ -6,6 +6,7 @@ public class HW1{
 		checkPositiveOrNegative(0);
 		System.out.println(checkNegativeNumber(-78941));
 		printHelloName("Sergei");
+		checkLeapYear(4000);
 	}
 	
 	static void initiateVariables(){
@@ -53,4 +54,19 @@ public class HW1{
 		System.out.println ("Hello, " + name + "!");
 	}
 	
+	static void checkLeapYear(int year){
+		
+		if (year%4 == 0) {
+			if ((year%100 == 0)&&(year%400 == 0)){
+				System.out.println ("Leap year");
+			} else if ((year%100 == 0)&&(year%400 != 0)){
+				System.out.println ("Not leap year");
+			} else {
+				System.out.println ("Leap year");
+			}
+		} else {
+			System.out.println ("Not leap year");
+		}
+		
+	}
 }
