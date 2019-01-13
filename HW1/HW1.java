@@ -5,6 +5,7 @@ public class HW1{
 		System.out.println(compareSum(10,11));
 		checkPositiveOrNegative(0);
 		System.out.println(checkNegativeNumber(-78941));
+		printHelloName("Sergei");
 	}
 	
 	static void initiateVariables(){
@@ -47,4 +48,9 @@ public class HW1{
 			return false;
 		}
 	}
+	
+	static void printHelloName(String name){
+		System.out.println ("Hello, " + name + "!");
+	}
+	
 }
