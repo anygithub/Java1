@@ -1,6 +1,7 @@
 public class HW1{
 	public static void main (String[] args){
 		initiateVariables();
+		System.out.println(calculateExpression(1,2,3,4));
 	}
 	
 	static void initiateVariables(){
@@ -12,7 +13,11 @@ public class HW1{
 		double dbl = 468.45489;
 		boolean bl = true;
 		char ch = 'r';
-		
 		String str = "First homework";
 	}
+	
+	static int calculateExpression(int a, int b, int c, int d){
+		return a * (b + (c / d));
+	}
+	
 }
