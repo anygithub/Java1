@@ -4,6 +4,7 @@ public class HW1{
 		System.out.println(calculateExpression(1,2,3,4));
 		System.out.println(compareSum(10,11));
 		checkPositiveOrNegative(0);
+		System.out.println(checkNegativeNumber(-78941));
 	}
 	
 	static void initiateVariables(){
@@ -39,4 +40,11 @@ public class HW1{
 		}
 	}
 	
+	static boolean checkNegativeNumber(int a){
+		if (a < 0){
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
