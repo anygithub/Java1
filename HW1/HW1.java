@@ -2,6 +2,7 @@ public class HW1{
 	public static void main (String[] args){
 		initiateVariables();
 		System.out.println(calculateExpression(1,2,3,4));
+		System.out.println(compareSum(10,11));
 	}
 	
 	static void initiateVariables(){
@@ -20,4 +21,12 @@ public class HW1{
 		return a * (b + (c / d));
 	}
 	
+	static boolean compareSum(int a, int b){
+		int sum = a + b;
+		if ((sum>=10) && (sum<=20)){
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
