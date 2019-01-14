@@ -43,11 +43,7 @@ public class HW1{
 	}
 	
 	static boolean checkNegativeNumber(int a){
-		if (a < 0){
-			return true;
-		} else {
-			return false;
-		}
+		return (a<0);
 	}
 	
 	static void printHelloName(String name){
