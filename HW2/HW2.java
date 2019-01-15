@@ -72,5 +72,8 @@ class HW2 {
         }
     }
 
-
+    //Finds maximum and minimun eleemt in the array
+    public static void findMaxAndMinElementsInArray() {
+        
+    }
 }
