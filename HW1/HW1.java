@@ -1,5 +1,5 @@
 public class HW1{
-	public static void main (String[] args){
+    public static void main (String[] args){
 		initiateVariables();
 		System.out.println(calculateExpression(1,2,3,4));
 		System.out.println(compareSum(10,11));
