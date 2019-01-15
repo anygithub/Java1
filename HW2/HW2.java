@@ -21,7 +21,7 @@ class HW2 {
         //call task4
         createTwodimensionalArray(5);
         createTwodimensionalArray(10);
-        createTwodimensionalArray(3);
+        createTwodimensionalArray(4);
        
     }
 
