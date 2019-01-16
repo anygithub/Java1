@@ -36,23 +36,23 @@ class HW2 {
         createTwodimensionalArray(10);
         createTwodimensionalArray(4);
 
-       //call task5
-       findMaxAndMinElementsInArray(7);
-       findMaxAndMinElementsInArray(20);
-       findMaxAndMinElementsInArray(4);
+        //call task5
+        findMaxAndMinElementsInArray(7);
+        findMaxAndMinElementsInArray(20);
+        findMaxAndMinElementsInArray(4);
 
-       //call task6
-       System.out.println(checkBalance(a1));
-       System.out.println(checkBalance(a2));
-       System.out.println(checkBalance(a3));
-       System.out.println(checkBalance(a4));
-       System.out.println(checkBalance(a5));
-       
-       //call task7
-       moveArrayElements(a6,2);
-       moveArrayElements(a7,-4);
-       moveArrayElements(a8,15);
-       moveArrayElements(a9,0);
+        //call task6
+        System.out.println(checkBalance(a1));
+        System.out.println(checkBalance(a2));
+        System.out.println(checkBalance(a3));
+        System.out.println(checkBalance(a4));
+        System.out.println(checkBalance(a5));
+
+        //call task7
+        moveArrayElements(a6,2);
+        moveArrayElements(a7,-4);
+        moveArrayElements(a8,15);
+        moveArrayElements(a9,0);
     }
 
     /**
