@@ -16,7 +16,12 @@ class HW2 {
         int[] a3 = {10,10};
         int[] a4 = {1,1,1,1,4};
         int[] a5 = {5,6,7,3};
-        
+        //Initialization of arrays for task7
+        int[] a6 = {1,2,3,4,5,6};
+        int[] a7 = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+        int[] a8 = {1,2,3};
+        int[] a9 = {1,2,3,4,5,6,7};
+
         //call task1
         replaceZerosAndOnes();
 
@@ -42,6 +47,12 @@ class HW2 {
        System.out.println(checkBalance(a3));
        System.out.println(checkBalance(a4));
        System.out.println(checkBalance(a5));
+       
+       //call task7
+       moveArrayElements(a6,2);
+       moveArrayElements(a7,-4);
+       moveArrayElements(a8,15);
+       moveArrayElements(a9,0);
     }
 
     /**
@@ -148,9 +159,37 @@ class HW2 {
         }
         return false;
     }
-    
+
     /**
-     * Ьуерщв 
+     * Method moves all elements in array on selected numberber of positions.
+     * @param arr[] array of the integer numbers
+     * @param s number of positions
      */
-     
+    public static void moveArrayElements(int arr[], int s) {
+        int temp;
+        int l = arr.length;
+
+        if (s > 0) {
+            if (s > l) {s = s % l;}
+            for (int i = 0; i < s; i++) {
+                temp = arr[l - 1];
+                for (int j = l - 1; j > 0; j--) {
+                    arr[j] = arr [j - 1];
+                }
+                arr[0] = temp;
+            }
+        } else if (s < 0){
+            s = Math.abs(s);
+            if (s > l) {s = s % l;}
+            for (int p = 0; p < s; p++) {
+                temp = arr[0];
+                for (int k = 0; k < l - 1; k++) {
+                    arr[k] = arr[k+1];
+                }
+                arr[l-1] = temp;
+            }
+        }
+
+        System.out.println(Arrays.toString(arr));
+    }
 }
