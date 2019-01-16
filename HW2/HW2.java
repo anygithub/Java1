@@ -31,7 +31,7 @@ class HW2 {
     }
 
     /**
-     * Method wich replace 0 by 1 and 1 by 0 in array
+     * Method creates array. Replaces 0 by 1 and 1 by 0.
      */
     public static void replaceZerosAndOnes() {
         int[] arr = {1,1,0,0,1,0,1,1,0,0};
@@ -46,7 +46,7 @@ class HW2 {
     }
 
     /**
-     * Create array with length 8 and fill it
+     * Method creates array with length 8 and fill it
      */
     public static void createArray() {
         int[] ar = new int [8];
@@ -57,7 +57,7 @@ class HW2 {
     }
 
     /**
-     * Create array and multiple each element which is lower then 6 on 2
+     * Method creates array and multiple each element which is lower then 6 on 2
      */
     public static void createArrayAndMultipleElements() {
         int[] arr = {1,5,3,2,11,4,5,2,4,8,9,1};
@@ -70,7 +70,8 @@ class HW2 {
     }
 
     /**
-     * Creates two-dimensional array and fills diagonal elements with 1
+     * Method creates two-dimensional array and fills diagonal elements with 1
+     * @param n - dimention of array
      */
     public static void createTwodimensionalArray(int n) {
         int[][] matr = new int [n][n];
