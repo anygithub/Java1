@@ -128,6 +128,7 @@ class HW2 {
     /**
      * Method checks if there a place in the array where sum of right elements equals sum of left elements.
      * @return true in case if there is such place in the array.
+     * @param arr[] array of integer numbers
      */
     public static boolean checkBalance(int arr[]) {
         int l = arr.length;
@@ -147,4 +148,9 @@ class HW2 {
         }
         return false;
     }
+    
+    /**
+     * Ьуерщв 
+     */
+     
 }
