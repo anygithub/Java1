@@ -74,9 +74,9 @@ class HW2 {
      * Method creates array with length 8 and fill it
      */
     public static void createArray() {
-        int[] ar = new int [8];
+        int[] ar = new int[8];
         for (int i = 0; i < 8; i++) {
-            ar [i] = i*3;
+            ar[i] = i*3;
         }
         System.out.println(Arrays.toString(ar));
     }
