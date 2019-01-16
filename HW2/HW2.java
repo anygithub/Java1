@@ -2,7 +2,7 @@
  * Java1. Homework2
  *
  * @author Anna Bondarenko
- * @version date 
+ * @version date 16.01.19
 */
 import java.util.Arrays;
 import java.util.Random;
@@ -174,7 +174,7 @@ class HW2 {
             for (int i = 0; i < s; i++) {
                 temp = arr[l - 1];
                 for (int j = l - 1; j > 0; j--) {
-                    arr[j] = arr [j - 1];
+                    arr[j] = arr [j-1];
                 }
                 arr[0] = temp;
             }
