@@ -5,6 +5,7 @@
  * @version date 
 */
 import java.util.Arrays;
+import java.util.Random;
 
 class HW2 {
 
@@ -22,7 +23,11 @@ class HW2 {
         createTwodimensionalArray(5);
         createTwodimensionalArray(10);
         createTwodimensionalArray(4);
-       
+
+       //call task5
+       findMaxAndMinElementsInArray(7);
+       findMaxAndMinElementsInArray(20);
+       findMaxAndMinElementsInArray(4);
     }
 
     /**
@@ -81,9 +86,27 @@ class HW2 {
     }
 
     /**
-     * Finds maximum and minimun eleemt in the array
+     * Method creates one-dimentional array filled with random numbers. And finds maximal and minimal element.
+     * @param dim - dimention of array
      */
-    public static void findMaxAndMinElementsInArray() {
+    public static void findMaxAndMinElementsInArray(int dim) {
+        int[] arr = new int[dim];
+        Random random = new Random();
+        int min, max;
+
+        //Fill array with random numbers
+        for (int i = 0; i < dim; i++) {
+            arr[i] = random.nextInt(50);
+        }
+        System.out.println(Arrays.toString(arr));
         
+        //Find minimum and maximum elemnts
+        min = arr[0];
+        max = arr[0];
+        for (int j = 1; j < dim; j++) {
+            if (arr[j] < min) {min = arr[j];}
+            if (arr[j] > max) {max  = arr[j];}
+        }
+        System.out.println ("Minimal element - " + min + "     Maximal element - " + max);
     }
 }
