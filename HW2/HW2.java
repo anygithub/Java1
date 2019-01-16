@@ -99,7 +99,7 @@ class HW2 {
      * @param n - array length
      */
     public static void createTwodimensionalArray(int n) {
-        int[][] matr = new int [n][n];
+        int[][] matr = new int[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if ((i == j)||(i == n - j -1)) {
@@ -113,15 +113,15 @@ class HW2 {
 
     /**
      * Method creates one-dimentional array filled with random numbers. And finds maximal and minimal element.
-     * @param dim - dimention of array
+     * @param n - array length
      */
-    public static void findMaxAndMinElementsInArray(int dim) {
-        int[] arr = new int[dim];
+    public static void findMaxAndMinElementsInArray(int n) {
+        int[] arr = new int[n];
         Random random = new Random();
         int min, max;
 
         //Fill array with random numbers
-        for (int i = 0; i < dim; i++) {
+        for (int i = 0; i < n; i++) {
             arr[i] = random.nextInt(50);
         }
         System.out.println(Arrays.toString(arr));
@@ -129,7 +129,7 @@ class HW2 {
         //Find minimum and maximum elemnts
         min = arr[0];
         max = arr[0];
-        for (int j = 1; j < dim; j++) {
+        for (int j = 1; j < n; j++) {
             if (arr[j] < min) {min = arr[j];}
             if (arr[j] > max) {max  = arr[j];}
         }
