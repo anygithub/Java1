@@ -96,7 +96,7 @@ class HW2 {
 
     /**
      * Method creates two-dimensional array and fills diagonal elements with 1
-     * @param n - dimention of array
+     * @param n - array length
      */
     public static void createTwodimensionalArray(int n) {
         int[][] matr = new int [n][n];
