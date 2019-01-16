@@ -10,6 +10,13 @@ import java.util.Random;
 class HW2 {
 
     public static void main(String[] args) {
+        //Initialization of arrays for task6
+        int[] a1 = {1,1,1,2,1};
+        int[] a2 = {2,1,1,2,1};
+        int[] a3 = {10,10};
+        int[] a4 = {1,1,1,1,4};
+        int[] a5 = {5,6,7,3};
+        
         //call task1
         replaceZerosAndOnes();
 
@@ -28,6 +35,13 @@ class HW2 {
        findMaxAndMinElementsInArray(7);
        findMaxAndMinElementsInArray(20);
        findMaxAndMinElementsInArray(4);
+
+       //call task6
+       System.out.println(checkBalance(a1));
+       System.out.println(checkBalance(a2));
+       System.out.println(checkBalance(a3));
+       System.out.println(checkBalance(a4));
+       System.out.println(checkBalance(a5));
     }
 
     /**
@@ -109,5 +123,28 @@ class HW2 {
             if (arr[j] > max) {max  = arr[j];}
         }
         System.out.println ("Minimal element - " + min + "     Maximal element - " + max);
+    }
+
+    /**
+     * Method checks if there a place in the array where sum of right elements equals sum of left elements.
+     * @return true in case if there is such place in the array.
+     */
+    public static boolean checkBalance(int arr[]) {
+        int l = arr.length;
+        int leftSum = 0;
+        int righSum = 0;
+
+        for (int i = 0; i < l - 1; i++) {
+            leftSum += arr[i];
+            for (int j = l - 1; j > i; j--) {
+                righSum += arr[j];
+            }
+            if (leftSum == righSum) {
+                return true;
+            } else {
+                righSum = 0;
+            }
+        }
+        return false;
     }
 }
