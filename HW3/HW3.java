@@ -6,17 +6,19 @@
 */
 
 import java.util.Scanner;
+import java.util.Random;
 
 class HW3 {
     public static void main (String[] args) {
         inputNumber(1,9);
+        System.out.println(generateRandomNumber(1,9));
         //compareNumbers()
     }
 
     /**
      * Method requests to input random number from the range.
      */
-    public static int inputNumber(int min, int max) {
+    static int inputNumber(int min, int max) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Input number in a range from " + min + " to " + max + ": ");
         return sc.nextInt();
@@ -27,9 +29,9 @@ class HW3 {
      * @param min - lower number of the range
      * @param max - higher number of the range
      */
-    /*static int generateRandomNumber(int min, int max) {
-        //Random rand = new Random();
-        return 0;//(min + rand.nextInt(max + 1));
+    static int generateRandomNumber(int min, int max) {
+        Random random = new Random();
+        return (min + random.nextInt(max + 1));
     }
 
     /**
