@@ -11,12 +11,18 @@ class HW3 {
     }
 
     /**
-     * Check if two numbers are equal. If they are not equal return ????
+     * Compare two numbers.
      * @param num1 - integer number
      * @param num2 - integer number
      */
-    static String checkNumber(int num1, int num2) {
-        
+    static String compareNumbers(int num1, int num2) {
+        if (num1 > num2) {
+            return "Your number is greater then specified number" ;
+        } else if (num1 < num2) {
+            return "Your number is less then specified number" ;
+        } else {
+            return "Congratulations! You guessed the number."
+        }
     }
 
     /**
