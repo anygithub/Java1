@@ -10,7 +10,7 @@ import java.util.Random;
 
 class HW3 {
     public static void main (String[] args) {
-        runGame(byte option, int min, int max);
+        runGame(1,1,9);
     }
 
     /**
@@ -31,17 +31,18 @@ class HW3 {
      */
     static int generateRandomNumber(int min, int max) {
         Random random = new Random();
-        return (min + random.nextInt(max + 1));
+        int t = min + random.nextInt(max + 1);
+        System.out.println (t);
+        return (t);
     }
 
-    /**
+    /**1
      * Compare two numbers.
      * @param num1 - integer number
      * @param num2 - integer number
      */
-    static byte compareNumbers(int num1, int num2) {
+    static int compareNumbers(int num1, int num2) {
         if (num1 > num2) {
-            
             return 1;
         } else if (num1 < num2) {
             return 2;
@@ -52,43 +53,56 @@ class HW3 {
 
     /**
      * Ask user to play or not to play.
-     * @param option - '1' continue the game; '0' stop the game;
      */
-    static byte playAgain(byte option) {
+    static int playAgain() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Play again? (1 - Yes; 0 - No)");
-        return sc.nextByte();
+        return sc.nextInt();
     }
     
     /**
      * Runs tha game where computer generates random number and user have 3 attempts to gues it.
-     * @param res - byte number
+     * @param res - int number
      */
-    static void printResult(byte res) {
+    static void printResult(int res) {
         switch (res){
-            case 1: System.out.println("Your number is greater then specified number");
-            case 2: System.out.println("Your number is lower then specified number");
-            case 3: System.out.println("Congratulations! You guessed the number.");
+            case 1: 
+                System.out.println("Your number is greater then specified number");
+                break;
+            case 2: 
+                System.out.println("Your number is lower then specified number");
+                break;
+            case 3: 
+                System.out.println("Congratulations! You guessed the number.");
+                break;
         }
         
     }
 
     /**
-     * Runs tha game where computer generates random number and user have 3 attempts to gues it.
+     * Runs the game where computer generates random number and user have 3 attempts to gues it.
      * @param option - '1' continue the game; '0' stop the game;
      * @param min - lower number of the range
      * @param max - higher number of the range
      */
-    static void runGame(byte option, int min, int max) {
-        byte i = 1;
-        byte res;
+    static void runGame(int option, int min, int max) {
+        int i = 1;
+        int res;
+        int randomNum = generateRandomNumber(min,max);
 
         while(option == 1) {
-            res = compareNumbers(inputNumber(min,max),generateRandomNumber(min,max));
-            i++;
-            if ((i == 3)|res == 3) {
-                option = playAgain(); 
+            res = compareNumbers(inputNumber(min,max),randomNum);
+            printResult(res);
+            if ((i == 3)||(res == 3)) {
+                option = playAgain();
+                if (option == 1) {
+                    i = 0;
+                    randomNum = generateRandomNumber(min,max);
+                } else {
+                    break;
+                }
             }
+            i++;
         }
     }
 
