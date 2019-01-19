@@ -4,3 +4,9 @@
  * @author Anna Bondarenko
  * @version date 
 */
+
+class HW3 {
+    public static void main (String[] args) {
+        
+    }
+}
