@@ -7,14 +7,15 @@
 
 import java.util.Scanner;
 import java.util.Random;
+import java.util.Arrays;
 
 class HW3 {
     public static void main (String[] args) {
         //call task1
-        runGame(1,0,9);
+        //runGame(1,0,9);
 
         //call task2
-        
+        System.out.println(Arrays.toString(fillArray()));
     }
 
     /**
@@ -110,10 +111,16 @@ class HW3 {
         }
     }
 
-        /**
-     * Runs the game where computer generates random number and user have 3 attempts to gues it.
-     * @param option - '1' continue the game; '0' stop the game;
-     * @param min - lower number of the range
-     * @param max - higher number of the range
+    /**
+     * Fills array with words.
      */
+     static String[] fillArray() {
+         String[] words = {"apple", "orange", "lemon", "banana", "apricot", "avocado",
+                            "broccoli", "carrot", "cherry", "garlic", "grape", "melon", 
+                            "leak", "kiwi", "mango", "mushroom", "nut", "olive", "pea", 
+                            "peanut", "pear", "pepper", "pineapple", "pumpkin", "potato"};
+        return words;
+     }
+
+     
 }
