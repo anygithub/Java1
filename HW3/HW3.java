@@ -2,7 +2,7 @@
  * Java1. Homework3
  *
  * @author Anna Bondarenko
- * @version date 
+ * @version date 20.01.19
 */
 
 import java.util.Scanner;
@@ -10,7 +10,11 @@ import java.util.Random;
 
 class HW3 {
     public static void main (String[] args) {
-        runGame(1,1,9);
+        //call task1
+        runGame(1,0,9);
+
+        //call task2
+        
     }
 
     /**
@@ -106,4 +110,10 @@ class HW3 {
         }
     }
 
+        /**
+     * Runs the game where computer generates random number and user have 3 attempts to gues it.
+     * @param option - '1' continue the game; '0' stop the game;
+     * @param min - lower number of the range
+     * @param max - higher number of the range
+     */
 }
