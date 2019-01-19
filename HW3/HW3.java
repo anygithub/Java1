@@ -15,7 +15,9 @@ class HW3 {
         //runGame(1,0,9);
 
         //call task2
-        System.out.println(Arrays.toString(fillArray()));
+        //System.out.println(Arrays.toString(fillArray()));
+        //System.out.println(selectRandomWord(fillArray()));
+        runGameGuessWord();
     }
 
     /**
@@ -112,15 +114,30 @@ class HW3 {
     }
 
     /**
-     * Fills array with words.
+     * Fill array with words.
      */
      static String[] fillArray() {
-         String[] words = {"apple", "orange", "lemon", "banana", "apricot", "avocado",
+        String[] array = {"apple", "orange", "lemon", "banana", "apricot", "avocado",
                             "broccoli", "carrot", "cherry", "garlic", "grape", "melon", 
                             "leak", "kiwi", "mango", "mushroom", "nut", "olive", "pea", 
                             "peanut", "pear", "pepper", "pineapple", "pumpkin", "potato"};
-        return words;
+        return array;
      }
 
-     
+    /**
+     * Select random word from the array.
+     * @param array - array of words
+     */
+    static int selectRandomWord(String[] array) {
+        Random random = new Random();
+        return (random.nextInt(array.length + 1));
+    }
+
+    /**
+     * Start game 'Guess the word'.
+     */
+    static void runGameGuessWord() {
+        String[] words = fillArray();
+        System.out.println(Arrays.toString(words));
+    }
 }
