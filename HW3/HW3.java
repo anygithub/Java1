@@ -10,8 +10,7 @@ import java.util.Random;
 
 class HW3 {
     public static void main (String[] args) {
-        
-        //
+        runGame(byte option, int min, int max);
     }
 
     /**
@@ -40,37 +39,56 @@ class HW3 {
      * @param num1 - integer number
      * @param num2 - integer number
      */
-    static String compareNumbers(int num1, int num2) {
+    static byte compareNumbers(int num1, int num2) {
         if (num1 > num2) {
-            return ("Your number is greater then specified number");
+            
+            return 1;
         } else if (num1 < num2) {
-            return ("Your number is less then specified number");
+            return 2;
         } else {
-            return ("Congratulations! You guessed the number.");
+            return 3;
         }
     } 
 
     /**
-     * Runs tha game where computer generates random number and user have 3 attempts to gues it.
+     * Ask user to play or not to play.
      * @param option - '1' continue the game; '0' stop the game;
      */
-    static playAgain(byte option) {
+    static byte playAgain(byte option) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Play again? (1 - Yes; 0 - No)");
-        option = sc.nextByte();
+        return sc.nextByte();
+    }
+    
+    /**
+     * Runs tha game where computer generates random number and user have 3 attempts to gues it.
+     * @param res - byte number
+     */
+    static void printResult(byte res) {
+        switch (res){
+            case 1: System.out.println("Your number is greater then specified number");
+            case 2: System.out.println("Your number is lower then specified number");
+            case 3: System.out.println("Congratulations! You guessed the number.");
+        }
+        
     }
 
     /**
      * Runs tha game where computer generates random number and user have 3 attempts to gues it.
      * @param option - '1' continue the game; '0' stop the game;
+     * @param min - lower number of the range
+     * @param max - higher number of the range
      */
-    static void runGame(byte option) {
+    static void runGame(byte option, int min, int max) {
         byte i = 1;
-        
+        byte res;
+
         while(option == 1) {
-            compareNumbers(inputNumber(1,9),generateRandomNumber(1,9));
+            res = compareNumbers(inputNumber(min,max),generateRandomNumber(min,max));
             i++;
-            playAgain(); //&???
+            if ((i == 3)|res == 3) {
+                option = playAgain(); 
+            }
         }
     }
 
