@@ -14,10 +14,6 @@ class HW3 {
         //call task1
         runGameGuessNumber(1,0,9);
 
-        //call task2
-        //System.out.println(Arrays.toString(fillArray()));
-        //System.out.println(selectRandomWord(fillArray()));
-        //runGameGuessWord();
     }
 
     /**
