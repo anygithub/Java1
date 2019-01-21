@@ -22,9 +22,7 @@ class HW3 {
      * @param max - higher number of the range
      */
     static int inputNumber(int min, int max) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Input number in a range from " + min + " to " + max + ": ");
-        return sc.nextInt();
+        return getNumberFromConsole("Input number in a range from " + min + " to " + max + ": ");
     }
 
     /**
@@ -34,9 +32,7 @@ class HW3 {
      */
     static int generateRandomNumber(int min, int max) {
         Random random = new Random();
-        int t = min + random.nextInt(max + 1);
-        //System.out.println (t);
-        return (t);
+        return (min + random.nextInt(max + 1));
     }
 
     /**1
@@ -58,11 +54,19 @@ class HW3 {
      * Ask user to play or not to play.
      */
     static int playAgain() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Play again? (1 - Yes; 0 - No)");
-        return sc.nextInt();
+        return getNumberFromConsole("Play again? (1 - Yes; 0 - No)");
     }
-    
+
+    /**
+     * Get number from user
+     * @param message - message which will be printed to user
+     */
+     static int getNumberFromConsole(String message) {
+         Scanner sc = new Scanner(System.in);
+         System.out.println(message);
+         return sc.nextInt();
+     }
+
     /**
      * Runs tha game where computer generates random number and user have 3 attempts to gues it.
      * @param res - int number
