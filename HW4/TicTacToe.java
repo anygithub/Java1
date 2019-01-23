@@ -92,6 +92,31 @@ class TicTacToe {
         if (map[2][0] == dt && map[1][1] == dt && map[0][2] == dt) return true;
         return false;
     }
+    /* new method
+    public static boolean checkLine(int start_x, int start_y, int dx, int dy, String sign)
+{
+  for (int i = 0; i < DIMENSION; i++)
+  {
+    if (field[start_x + i * dx][start_y + i * dy] != sign)
+      return false;
+  }
+  return true;
+}
+ 
+public static boolean checkWin(String sign)
+{
+  for (int i = 0; i < DIMENSION; i++)
+  {
+    // проверяем строки
+    if (checkLine(i, 0, 0, 1, sign)) return true;
+    // проверяем столбцы
+    if (checkLine(0, i, 1, 0, sign)) return true;
+  }
+  // проверяем диагонали
+  if (checkLine(0, 0, 1, 1, sign)) return true;
+  if (checkLine(0, DIMENSION - 1, 1, -1, sign)) return true;
+  return false;
+}*/
     
     boolean isMapFull() {
         for (int i = 0; i < SIZE; i++)
