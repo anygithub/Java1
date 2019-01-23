@@ -15,6 +15,9 @@ class TicTacToe {
         new TicTacToe().game();
     }
 
+    /**
+     * TicTakToe game
+     */
     void game() {
         initMap();
         random = new Random();
@@ -44,6 +47,9 @@ class TicTacToe {
         System.out.println("GAME OVER");
     }
 
+    /**
+     * Create empty game map
+     */
     void initMap() {
         map = new char[SIZE][SIZE];
         for (int i = 0; i < SIZE; i++)
@@ -51,6 +57,9 @@ class TicTacToe {
                 map[i][j] = DOT_EMPTY;
     }
 
+    /**
+     * Print game map
+     */
     void printMap() {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++)
@@ -58,7 +67,10 @@ class TicTacToe {
             System.out.println();
         }
     }
-    
+
+    /**
+     * Human move
+     */
     void humanTurn() {
         int x, y;
         do {
@@ -69,6 +81,9 @@ class TicTacToe {
         map[y][x] = DOT_X;
     }
 
+    /**
+     * Artifitial intelegent(AI) move
+     */
     void aiTurn() {
         int x, y;
         do {
@@ -77,7 +92,9 @@ class TicTacToe {
         } while (!isCellValid(x, y));
         map[y][x] = DOT_O;
     }
-    
+
+    /* 
+    //old ckeckLine method
     boolean checkWin(char dt) {
         // check horizontal
         if (map[0][0] == dt && map[1][0] == dt && map[2][0] == dt) return true;
@@ -91,33 +108,50 @@ class TicTacToe {
         if (map[0][0] == dt && map[1][1] == dt && map[2][2] == dt) return true;
         if (map[2][0] == dt && map[1][1] == dt && map[0][2] == dt) return true;
         return false;
+    }*/
+
+    /** 
+     * Check row/column/diagonal
+     */
+    boolean checkLine(int start_x, int start_y, int dx, int dy, char dt)
+    {
+        for (int i = 0; i < SIZE; i++)
+        {
+            if (map[start_x + i * dx][start_y + i * dy] != dt)
+            return false;
+        }
+        return true;
     }
-    /* new method
-    public static boolean checkLine(int start_x, int start_y, int dx, int dy, String sign)
-{
-  for (int i = 0; i < DIMENSION; i++)
-  {
-    if (field[start_x + i * dx][start_y + i * dy] != sign)
-      return false;
-  }
-  return true;
-}
- 
-public static boolean checkWin(String sign)
-{
-  for (int i = 0; i < DIMENSION; i++)
-  {
-    // проверяем строки
-    if (checkLine(i, 0, 0, 1, sign)) return true;
-    // проверяем столбцы
-    if (checkLine(0, i, 1, 0, sign)) return true;
-  }
-  // проверяем диагонали
-  if (checkLine(0, 0, 1, 1, sign)) return true;
-  if (checkLine(0, DIMENSION - 1, 1, -1, sign)) return true;
-  return false;
-}*/
-    
+
+    /** 
+     * Check win
+     */
+    boolean checkWin(char dt)
+    {
+        for (int i = 0; i < SIZE; i++)
+        {
+            //Check rows
+            if (checkLine(i, 0, 0, 1, dt)) {
+                return true;
+            }
+            //Check columns
+            if (checkLine(0, i, 1, 0, dt)) {
+                return true;
+            }
+        }
+            //Check diagonals
+            if (checkLine(0, 0, 1, 1, dt)) {
+                return true;
+            }
+            if (checkLine(0, SIZE - 1, 1, -1, dt)) {
+                return true;
+            }
+            return false;
+    }
+
+    /** 
+     * Check if map is full
+     */
     boolean isMapFull() {
         for (int i = 0; i < SIZE; i++)
             for (int j = 0; j < SIZE; j++)
@@ -126,9 +160,13 @@ public static boolean checkWin(String sign)
         return true;
     }
 
+    /** 
+     * Check if cell is valid for move
+     */
     boolean isCellValid(int x, int y) {
         if (x < 0 || y < 0 || x >= SIZE || y >= SIZE)
             return false;
-        return map[y][x] == DOT_EMPTY; // by DSerov
+        return map[y][x] == DOT_EMPTY;0
+        
     }
 }
