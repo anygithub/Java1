@@ -166,7 +166,7 @@ class TicTacToe {
     boolean isCellValid(int x, int y) {
         if (x < 0 || y < 0 || x >= SIZE || y >= SIZE)
             return false;
-        return map[y][x] == DOT_EMPTY;0
+        return map[y][x] == DOT_EMPTY;
         
     }
 }
