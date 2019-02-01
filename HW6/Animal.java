@@ -2,17 +2,17 @@
  * Java1. Homework6
  *
  * @author Anna Bondarenko
- * @version date
+ * @version date 01.02.19
  */
 
 
 /**
  * Super class Animal
  */
-public class Animal {
+abstract class Animal {
 
     protected String name;
-    protected double runDistance;
+    protected double  runDistance;
     protected double swimDistance;
     protected double jumpHeight;
 
@@ -31,30 +31,39 @@ public class Animal {
     }
 
     /**
-     * Check if animal can run for the distance
+     * Check if animal can run the distance
      * @param distance - distance to check
-     * @return true if animal can run the distance
+     * @return run:true if animal can run the distance
      */
-    protected boolean run(double distance) {
-        return (distance <= runDistance)?true:false;
+    public String run(double distance) {
+        return (runDistance >= distance)?"run: true":"run: false";
     }
 
     /**
-     * Check if animal can swim for the distance
+     * Check if animal can swim the distance
      * @param distance - distance to check
-     * @return true if animal can swim the distance
+     * @return swim:true if animal can swim the distance
      */
-    protected boolean swim(double distance) {
-        return (distance <= swimDistance)?true:false;
+    public String swim(double distance) {
+        return (swimDistance >= distance)?"swim: true": "swim: false";
     }
 
     /**
      * Check if animal can jump on the height
      * @param height - height to check
-     * @return true can jump on the height
+     * @return jump: true if animal can jump on the height
      */
-    protected boolean jump(double height) {
-        return (height <= jumpHeight)?true:false;
+    public String jump(double height) {
+        return (jumpHeight >= height)?"jump: true": "jump: false";
+    }
+
+    /**
+     * Returns
+     * @return
+     */
+    @Override
+    public String toString(){
+        return name + ", " + runDistance + ", " + swimDistance + ", " + jumpHeight;
     }
 
 
@@ -122,8 +131,5 @@ public class Animal {
         this.jumpHeight = jumpHeight;
     }
 
-    @Override
-    public String toString(){
-        return name + ", " + runDistance + ", " + swimDistance + ", " + jumpHeight;
-    }
+
 }
