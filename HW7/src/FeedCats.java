@@ -5,7 +5,7 @@
  * @version date 03.02.19
  */
 
-public class startFeedTheCat {
+public class FeedCats {
     public static void main(String[] args) {
         //Declaration of objects
         Cat[] cats = new Cat[5];
