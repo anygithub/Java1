@@ -22,6 +22,10 @@ public class Plate {
         }
     }
 
+    /**
+     * Return string with amount of food in the plate
+     * @return
+     */
     @Override
     public String toString() {
         return "Food: " + food;
