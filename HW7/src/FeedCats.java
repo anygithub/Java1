@@ -10,7 +10,7 @@ public class startFeedTheCat {
         //Declaration of objects
         Cat[] cats = new Cat[5];
         Plate plate = new Plate(25);
-        
+
         fillArray(cats);
         feedCats(cats, plate);
 
